@@ -1,8 +1,11 @@
 import { useState } from "react";
 
-export function useTamanhoTela(){
+export const useTamanhoTela = () => {
     const [tela, setTela] = useState(window.innerWidth);
-    window.addEventListener('resize', () => {setTela(window.innerWidth)});
+
+    function  medeTela(){
+        window.addEventListener('resize', () => {setTela(window.innerWidth)});
+    }
 
     return tela;
 }
